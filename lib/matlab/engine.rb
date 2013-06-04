@@ -84,6 +84,10 @@ module Matlab
       # Loads the corresponding driver, or if it is nil, attempts to locate a
       # suitable driver.
       def load_driver(driver)
+
+        puts "driver class: #{driver.class}"
+        puts "driver: #{driver}"
+
         case driver
           when Class
             # do nothing--use what was given
@@ -91,14 +95,20 @@ module Matlab
             require "matlab/driver/#{driver.to_s.downcase}/driver"
             driver = Matlab::Driver.const_get(driver)::Driver
           else
+            puts "attempt at native?"
             [ "Native" ].each do |d|
               begin
                 require "matlab/driver/#{d.downcase}/driver"
                 driver = Matlab::Driver.const_get(d)::Driver
+                puts "driver.class: #{driver.class}"
+                puts "driver = #{driver}"
                 break
               rescue SyntaxError
-                raise
-              rescue ScriptError, Exception, NameError
+                puts "syntax error exception"
+              raise
+              rescue ScriptError, Exception, NameError => ex
+                puts "other error"
+                puts ex
               end
             end
             raise "no driver for matlab found" unless driver

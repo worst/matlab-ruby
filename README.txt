@@ -1,5 +1,5 @@
-matlab-ruby
-    http://matlab-ruby.rubyforge.org/
+= matlab-ruby
+  home :: http://matlab-ruby.rubyforge.org/
     jonathan.younger@lipomics.com
     A big thank you to Lipomics Technologies, Inc. http://www.lipomics.com for sponsoring this project.
     
