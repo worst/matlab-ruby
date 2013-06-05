@@ -1860,7 +1860,7 @@ SWIG_AsCharPtrAndSize(VALUE obj, char** cptr, size_t* psize, int *alloc)
     if (cptr)  {
       if (alloc) {
 	if (*alloc == SWIG_NEWOBJ) {
-	  *cptr = (char *)memcpy((char *)malloc((size)*sizeof(char)), cstr, sizeof(char)*(size));
+	  *cptr = (char *)memcpy((char *)mxMalloc((size)*sizeof(char)), cstr, sizeof(char)*(size));
 	} else {
 	  *cptr = cstr;
 	  *alloc = SWIG_OLDOBJ;
@@ -3154,7 +3154,7 @@ _wrap_mxGetNumberOfDimensions_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (mxArray *)(argp1);
   result = mxGetNumberOfDimensions_730((struct mxArray_tag const *)arg1);
-  vresult = SWIG_NewPointerObj((mwSize *)memcpy((mwSize *)malloc(sizeof(mwSize)),&result,sizeof(mwSize)), SWIGTYPE_p_mwSize, SWIG_POINTER_OWN |  0 );
+  vresult = SWIG_NewPointerObj((mwSize *)memcpy((mwSize *)mxMalloc(sizeof(mwSize)),&result,sizeof(mwSize)), SWIGTYPE_p_mwSize, SWIG_POINTER_OWN |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -3701,7 +3701,7 @@ _wrap_mxGetNzmax_730(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = (mxArray *)(argp1);
   result = mxGetNzmax_730((struct mxArray_tag const *)arg1);
-  vresult = SWIG_NewPointerObj((mwSize *)memcpy((mwSize *)malloc(sizeof(mwSize)),&result,sizeof(mwSize)), SWIGTYPE_p_mwSize, SWIG_POINTER_OWN |  0 );
+  vresult = SWIG_NewPointerObj((mwSize *)memcpy((mwSize *)mxMalloc(sizeof(mwSize)),&result,sizeof(mwSize)), SWIGTYPE_p_mwSize, SWIG_POINTER_OWN |  0 );
   return vresult;
 fail:
   return Qnil;
@@ -3786,7 +3786,7 @@ _wrap_mxCalcSingleSubscript_730(int argc, VALUE *argv, VALUE self) {
   }
   arg3 = (mwIndex *)(argp3);
   result = mxCalcSingleSubscript_730((struct mxArray_tag const *)arg1,arg2,(mwIndex const *)arg3);
-  vresult = SWIG_NewPointerObj((mwIndex *)memcpy((mwIndex *)malloc(sizeof(mwIndex)),&result,sizeof(mwIndex)), SWIGTYPE_p_mwIndex, SWIG_POINTER_OWN |  0 );
+  vresult = SWIG_NewPointerObj((mwIndex *)memcpy((mwIndex *)mxMalloc(sizeof(mwIndex)),&result,sizeof(mwIndex)), SWIGTYPE_p_mwIndex, SWIG_POINTER_OWN |  0 );
   return vresult;
 fail:
   return Qnil;
