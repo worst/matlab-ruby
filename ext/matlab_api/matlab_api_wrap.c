@@ -3242,22 +3242,32 @@ _wrap_mxSetPr(int argc, VALUE *argv, VALUE self) {
   void *argp2 = 0 ;
   int res2 = 0 ;
 
-  printf("WTF?\n");
-  
   if ((argc < 2) || (argc > 2)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
   }
+
+  printf("WTF1?\n");
+
   res1 = SWIG_ConvertPtr(argv[0], &argp1,SWIGTYPE_p_mxArray_tag, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "mxArray *","mxSetPr", 1, argv[0] )); 
   }
+
+  printf("WTF2?\n");
+
   arg1 = (mxArray *)(argp1);
   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_double, 0 |  0 );
+
+  printf("WTF3?\n");
   if (!SWIG_IsOK(res2)) {
     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "double *","mxSetPr", 2, argv[1] )); 
   }
   arg2 = (double *)(argp2);
+
+  printf("WTF4?\n");
   mxSetPr(arg1,arg2);
+
+  printf("WTF5?\n");
   return Qnil;
 fail:
   return Qnil;
