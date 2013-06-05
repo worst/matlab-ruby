@@ -2099,7 +2099,8 @@ SWIG_AsVal_double (VALUE obj, double *val)
 typedef double DoubleArray;
 
 SWIGINTERN DoubleArray *new_DoubleArray(size_t nelements){
-    return (double *)malloc((nelements)*sizeof(double));
+    // return (double *)malloc((nelements)*sizeof(double));
+  return (double *)mxMalloc((nelements * sizeof(double)));
   }
 SWIGINTERN double DoubleArray___getitem__(DoubleArray *self,size_t index){
     return self[index];
