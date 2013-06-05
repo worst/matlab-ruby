@@ -198,7 +198,9 @@ module Matlab
       m = Matlab::Driver::Native::API.mxGetM(matrix)
       n = Matlab::Driver::Native::API.mxGetN(matrix)
       names = (0...Matlab::Driver::Native::API.mxGetNumberOfFields(matrix)).collect { |i| Matlab::Driver::Native::API.mxGetFieldNameByNumber(matrix, i) }
-      
+
+      puts "names.size: #{names.size}"
+
       struct_matrix = self.new(m, n, *names)
       
       index = 0
